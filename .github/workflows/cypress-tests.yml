@@ -3,9 +3,9 @@ name: Cypress Tests
 # Rodar a cada push ou PR na branch main
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   cypress-run:
@@ -30,6 +30,6 @@ jobs:
       - name: Build project
         run: npm run build
 
-      # 5️⃣ Rodar Cypress em modo headless
+        # 5️⃣ Rodar Cypress em modo headless com servidor
       - name: Run Cypress tests
-        run: npx cypress run
+        run: npm run cy:ci
