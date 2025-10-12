@@ -3,9 +3,9 @@ name: Cypress Tests
 # Rodar a cada push ou PR na branch main
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   cypress-run:
