@@ -138,6 +138,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
               </span>
             </div>
             <button
+              data-testid="menu-close"
               onClick={() => setIsMenuOpen(false)}
               className="text-gray-700 hover:text-gray-900"
             >
