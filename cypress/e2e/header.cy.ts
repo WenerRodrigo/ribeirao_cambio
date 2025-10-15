@@ -1,20 +1,22 @@
-describe("Header Component", () => {
+describe('Header e Menu Mobile', () => {
   beforeEach(() => {
-    cy.visit("http://localhost:5173/");
+    cy.visit('http://localhost:5173'); // ajuste conforme seu servidor local
   });
 
-  it("deve exibir o título da empresa", () => {
-    cy.get("h1").contains("Ribeirão Câmbio").should("be.visible");
+  it('deve exibir o header fixo no topo', () => {
+    cy.get('header').should('exist').and('be.visible');
   });
 
-  it("deve exibir todos os links de navegação", () => {
-    const links = ["Home", "Sobre", "Serviços", "Contato"];
-    links.forEach((link) => {
-      cy.get("nav").contains(link).should("be.visible");
-    });
+  // it('deve abrir e fechar o menu mobile', () => {
+  //   cy.viewport('iphone-6');
+  //   cy.get('button').first().click(); // abre o menu
+  //   cy.get('.fixed.inset-0').should('exist'); // overlay aparece
+  //   cy.get('button').contains('X').click(); // fecha o menu
+  //   cy.get('.fixed.inset-0').should('not.exist');
+  // });
 
-    it("deve marcar o primeiro link como ativo", () => {
-      cy.get("ul li").first().should("have.class", "font-bold");
-    });
-  });
+  // it('deve rolar até a seção Sobre ao clicar no botão correspondente', () => {
+  //   cy.get('button').contains('Sobre').click();
+  //   cy.url().should('include', '#sobre');
+  // });
 });

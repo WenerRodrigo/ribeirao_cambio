@@ -54,6 +54,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
         <nav className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <button
+              data-testid="menu-toggle"
               className="md:hidden text-gray-700 order-1"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
