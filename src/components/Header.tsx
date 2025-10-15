@@ -1,54 +1,183 @@
-import React from "react";
-
-interface NavLink {
-  label: string;
-  href: string;
-}
+import { Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
+// import logo from "../assets/logo.png";
 
 interface HeaderProps {
-  logo?: string;
-  companyName: string;
-  navLinks: NavLink[];
-  maxWidth?: string;
+  onNavigate?: (id: string) => void;
 }
 
-const Header: React.FC<HeaderProps> = ({
-  companyName,
-  navLinks,
-  maxWidth = "1200px",
-}) => {
-  const activeLink = navLinks[0]?.href;
+const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  const isActive = (href: string) => href === activeLink;
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isMenuOpen]);
+
+  const scrollToSection = (id: string) => {
+    if (onNavigate) {
+      onNavigate(id);
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
+  const navigateHome = () => {
+    window.location.href = "/";
+  };
 
   return (
-    <header
-      className={`flex items-center justify-between w-full mx-auto`}
-      style={{ maxWidth }}
-    >
-      <div className="flex items-center space-x-2 flex-co">
-        {/* {logo && <img src={logo} alt={companyName} className="w-full h-12 object-contain" />} */}
-        <h1 className="text-lg font-bold">{companyName}</h1>
-      </div>
-
-      <nav>
-        <ul className="flex space-x-4">
-          {navLinks.map((link) => (
-            <li
-              key={link.href}
-              className={isActive(link.href) ? "font-bold" : ""}
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled ? "bg-white shadow-lg" : "bg-transparent"
+        }`}
+      >
+        <nav className="container mx-auto px-4 py-4">
+          <div className="flex items-center justify-between">
+            <button
+              className="md:hidden text-gray-700 order-1"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              <a
-                href={link.href}
-                className="text-white hover:text-gray-600 transition-colors hover:underline"
+              <Menu size={24} />
+            </button>
+
+            <button
+              onClick={navigateHome}
+              className="flex items-center space-x-2 order-2 md:order-1"
+            >
+              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-xl">RC</span>
+              </div>
+              {/* <div className="w-32 flex items-center justify-center">
+                <img src={logo} alt="Ribeirão Câmbio" />
+              </div> */}
+              <span className="text-2xl font-bold text-gray-800">
+                Ribeirão <span className="text-blue-600">Câmbio</span>
+              </span>
+            </button>
+
+            <div className="hidden md:flex items-center space-x-8 order-3 md:order-2">
+              <button
+                onClick={() => scrollToSection("inicio")}
+                className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
               >
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </header>
+                Início
+              </button>
+
+              <button
+                onClick={() => scrollToSection("sobre")}
+                className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+              >
+                Sobre
+              </button>
+
+              <button
+                onClick={() => scrollToSection("pecas")}
+                className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+              >
+                Peças
+              </button>
+
+              <button
+                onClick={() => scrollToSection("historia")}
+                className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+              >
+                Nossa História
+              </button>
+
+              <button
+                onClick={() => scrollToSection("contato")}
+                className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+              >
+                Contato
+              </button>
+            </div>
+            <div className="md:hidden w-6 order-3"></div>
+          </div>
+        </nav>
+      </header>
+      {isMenuOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
+          onClick={() => setIsMenuOpen(false)}
+        />
+      )}
+      <div
+        className={`fixed top-0 left-0 h-full w-80 bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out md:hidden ${
+          isMenuOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <div className="p-6">
+          <div className="flex items-center justify-between mb-8">
+            <div className="flex items-center space-x-2">
+              <div className="w-10 h-10 bg-grandient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-xl">RC</span>
+              </div>
+              <span className="text-xl font-bold text-gray-800">
+                Ribeirão <span className="text-blue-600">Câmbio</span>
+              </span>
+            </div>
+            <button
+              onClick={() => setIsMenuOpen(false)}
+              className="text-gray-700 hover:text-gray-900"
+            >
+              <X size={24} />
+            </button>
+          </div>
+          <nav className="space-y-1">
+            <button
+              onClick={() => scrollToSection("inicio")}
+              className="block w-full text-left text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors py-3 px-4 rounded-lg font-medium"
+            >
+              Início
+            </button>
+            <button
+              onClick={() => scrollToSection("sobre")}
+              className="block w-full text-left text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors py-3 px-4 rounded-lg font-medium"
+            >
+              Sobre
+            </button>
+            <button
+              onClick={() => scrollToSection("pecas")}
+              className="block w-full text-left text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors py-3 px-4 rounded-lg font-medium"
+            >
+              Peças
+            </button>
+            <button
+              onClick={() => scrollToSection("historia")}
+              className="block w-full text-left text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors py-3 px-4 rounded-lg font-medium"
+            >
+              Nossa História
+            </button>
+            <button
+              onClick={() => scrollToSection("contato")}
+              className="block w-full text-left bg-blue-600 text-white hover:bg-blue-700 transition-colors py-3 px-4 rounded-lg font-medium mt-4"
+            >
+              Contato
+            </button>
+          </nav>
+        </div>
+      </div>
+    </>
   );
 };
 
