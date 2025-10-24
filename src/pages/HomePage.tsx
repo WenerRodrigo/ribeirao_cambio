@@ -27,7 +27,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                 Especialistas em{' '}
                 <span className="text-turquoise">Câmbio Automotivo</span>
               </h1>
