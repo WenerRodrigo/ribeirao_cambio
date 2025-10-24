@@ -1,6 +1,6 @@
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
-// import logo from "../assets/logo.png";
+import logo from "../assets/logo.jpg";
 
 interface HeaderProps {
   onNavigate?: (id: string) => void;
@@ -65,49 +65,45 @@ const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
               onClick={navigateHome}
               className="flex items-center space-x-2 order-2 md:order-1"
             >
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
+              {/* <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xl">RC</span>
-              </div>
-              {/* <div className="w-32 flex items-center justify-center">
-                <img src={logo} alt="Ribeirão Câmbio" />
               </div> */}
-              <span className="text-2xl font-bold text-gray-800">
-                Ribeirão <span className="text-blue-600">Câmbio</span>
+              <div className="w-14 flex items-center justify-center">
+                <img src={logo} alt="Ribeirão Câmbio" />
+              </div>
+              <span className="text-2xl font-bold text-gray-600">
+                Ribeirão <span className="">Câmbio</span>
               </span>
             </button>
 
             <div className="hidden md:flex items-center space-x-8 order-3 md:order-2">
               <button
-                onClick={() => scrollToSection("inicio")}
+                onClick={() => scrollToSection('inicio')}
                 className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
               >
                 Início
               </button>
-
               <button
-                onClick={() => scrollToSection("sobre")}
+                onClick={() => scrollToSection('sobre')}
                 className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
               >
                 Sobre
               </button>
-
               <button
-                onClick={() => scrollToSection("pecas")}
+                onClick={() => scrollToSection('pecas')}
                 className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
               >
                 Peças
               </button>
-
               <button
-                onClick={() => scrollToSection("historia")}
+                onClick={() => scrollToSection('historia')}
                 className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
               >
                 Nossa História
               </button>
-
               <button
-                onClick={() => scrollToSection("contato")}
-                className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+                onClick={() => scrollToSection('contato')}
+                className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium"
               >
                 Contato
               </button>
