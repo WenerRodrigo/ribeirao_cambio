@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import HomePage from "./pages/HomePage";
 import PoliticaPrivacidade from "./pages/PoliticaPrivacidade";
-// import TermosUso from './pages/TermosUso';
+import TermosUso from "./pages/TermosUso";
 
 function App() {
   const [currentPage, setCurrentPage] = useState<string>("home");
@@ -68,9 +68,9 @@ function App() {
     return <PoliticaPrivacidade />;
   }
 
-  // if (currentPage === 'termos') {
-  //   return <TermosUso />;
-  // }
+  if (currentPage === "termos") {
+    return <TermosUso />;
+  }
 
   return <HomePage />;
 }
