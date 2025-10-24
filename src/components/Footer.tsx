@@ -22,7 +22,7 @@ export default function Footer({ onNavigate }: FooterProps) {
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-turquoise rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xl">RC</span>
               </div>
               <span className="text-xl font-bold">Ribeirão Câmbio</span>

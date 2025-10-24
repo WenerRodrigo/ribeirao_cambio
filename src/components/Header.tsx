@@ -65,9 +65,6 @@ const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
               onClick={navigateHome}
               className="flex items-center space-x-2 order-2 md:order-1"
             >
-              {/* <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">RC</span>
-              </div> */}
               <div className="w-14 flex items-center justify-center">
                 <img src={logo} alt="Ribeirão Câmbio" />
               </div>
@@ -79,31 +76,31 @@ const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
             <div className="hidden md:flex items-center space-x-8 order-3 md:order-2">
               <button
                 onClick={() => scrollToSection('inicio')}
-                className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+                className="text-gray-700 hover:text-turquoise transition-colors font-medium"
               >
                 Início
               </button>
               <button
                 onClick={() => scrollToSection('sobre')}
-                className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+                className="text-gray-700 hover:text-turquoise transition-colors font-medium"
               >
                 Sobre
               </button>
               <button
                 onClick={() => scrollToSection('pecas')}
-                className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+                className="text-gray-700 hover:text-turquoise transition-colors font-medium"
               >
                 Peças
               </button>
               <button
                 onClick={() => scrollToSection('historia')}
-                className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+                className="text-gray-700 hover:text-turquoise transition-colors font-medium"
               >
                 Nossa História
               </button>
               <button
                 onClick={() => scrollToSection('contato')}
-                className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium"
+                className="bg-turquoise text-white px-6 py-2 rounded-lg hover:bg-teal-700 transition-colors font-medium"
               >
                 Contato
               </button>
@@ -126,11 +123,11 @@ const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
         <div className="p-6">
           <div className="flex items-center justify-between mb-8">
             <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-grandient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-grandient-to-br from-turquoise to-turquoise rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xl">RC</span>
               </div>
               <span className="text-xl font-bold text-gray-800">
-                Ribeirão <span className="text-blue-600">Câmbio</span>
+                Ribeirão <span className="text-turquoise">Câmbio</span>
               </span>
             </div>
             <button
@@ -144,31 +141,31 @@ const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
           <nav className="space-y-1">
             <button
               onClick={() => scrollToSection("inicio")}
-              className="block w-full text-left text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors py-3 px-4 rounded-lg font-medium"
+              className="block w-full text-left text-gray-700 hover:text-turquoise hover:bg-blue-50 transition-colors py-3 px-4 rounded-lg font-medium"
             >
               Início
             </button>
             <button
               onClick={() => scrollToSection("sobre")}
-              className="block w-full text-left text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors py-3 px-4 rounded-lg font-medium"
+              className="block w-full text-left text-gray-700 hover:text-turquoise hover:bg-blue-50 transition-colors py-3 px-4 rounded-lg font-medium"
             >
               Sobre
             </button>
             <button
               onClick={() => scrollToSection("pecas")}
-              className="block w-full text-left text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors py-3 px-4 rounded-lg font-medium"
+              className="block w-full text-left text-gray-700 hover:text-turquoise hover:bg-blue-50 transition-colors py-3 px-4 rounded-lg font-medium"
             >
               Peças
             </button>
             <button
               onClick={() => scrollToSection("historia")}
-              className="block w-full text-left text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors py-3 px-4 rounded-lg font-medium"
+              className="block w-full text-left text-gray-700 hover:text-turquoise hover:bg-blue-50 transition-colors py-3 px-4 rounded-lg font-medium"
             >
               Nossa História
             </button>
             <button
               onClick={() => scrollToSection("contato")}
-              className="block w-full text-left bg-blue-600 text-white hover:bg-blue-700 transition-colors py-3 px-4 rounded-lg font-medium mt-4"
+              className="block w-full text-left bg-turquoise text-white hover:bg-turquoise transition-colors py-3 px-4 rounded-lg font-medium mt-4"
             >
               Contato
             </button>

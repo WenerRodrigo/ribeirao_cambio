@@ -22,14 +22,14 @@ export default function HomePage() {
 
       <section
         id="inicio"
-        className="pt-32 pb-20 bg-gradient-to-br from-blue-50 via-white to-blue-50"
+        className="pt-32 pb-20 bg-white"
       >
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                 Especialistas em{' '}
-                <span className="text-blue-600">Câmbio Automotivo</span>
+                <span className="text-turquoise">Câmbio Automotivo</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 Peças de câmbio de alta qualidade para todos os tipos de veículos.
@@ -38,13 +38,13 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <button
                   onClick={() => scrollToSection('pecas')}
-                  className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-all transform hover:scale-105 font-semibold text-lg shadow-lg"
+                  className="bg-turquoise text-white px-8 py-4 rounded-lg hover:bg-teal-700 transition-all transform font-semibold text-lg shadow-lg"
                 >
                   Ver Peças
                 </button>
                 <button
                   onClick={() => scrollToSection('contato')}
-                  className="bg-white text-blue-600 border-2 border-blue-600 px-8 py-4 rounded-lg hover:bg-blue-50 transition-all font-semibold text-lg"
+                  className="bg-white text-turquoise border-2 border-turquoise px-8 py-4 rounded-lg hover:bg-blue-50 transition-all font-semibold text-lg"
                 >
                   Fale Conosco
                 </button>
@@ -57,7 +57,7 @@ export default function HomePage() {
                 className="rounded-2xl shadow-2xl w-full h-auto object-cover"
               />
               <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl">
-                <p className="text-3xl font-bold text-blue-600">+2</p>
+                <p className="text-3xl font-bold text-turquoise">+2</p>
                 <p className="text-gray-600 font-medium">Anos de Experiência</p>
               </div>
             </div>
@@ -91,7 +91,7 @@ export default function HomePage() {
               </p>
               <ul className="space-y-4">
                 <li className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <div className="w-6 h-6 bg-turquoise rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                     <span className="text-white text-sm">✓</span>
                   </div>
                   <span className="text-gray-700">
@@ -99,7 +99,7 @@ export default function HomePage() {
                   </span>
                 </li>
                 <li className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <div className="w-6 h-6 bg-turquoise rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                     <span className="text-white text-sm">✓</span>
                   </div>
                   <span className="text-gray-700">
@@ -107,7 +107,7 @@ export default function HomePage() {
                   </span>
                 </li>
                 <li className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <div className="w-6 h-6 bg-turquoise rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                     <span className="text-white text-sm">✓</span>
                   </div>
                   <span className="text-gray-700">Garantia em todos os produtos</span>
@@ -163,11 +163,11 @@ export default function HomePage() {
               />
               <div className="p-6">
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                  Peças Individuais
+                  Componentes de Câmbio
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  Engrenagens, rolamentos, sincronizadores e todas as peças necessárias
-                  para manutenção do seu câmbio.
+                  Engrenagens, rolamentos, sincronizadores e todos os componentes essenciais 
+                  para manutenção e reparo de câmbios automotivos
                 </p>
                 <a
                   href="https://wa.me/5516999999999"
@@ -230,11 +230,11 @@ export default function HomePage() {
               </p>
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center p-6 bg-blue-50 rounded-xl">
-                  <p className="text-4xl font-bold text-blue-600 mb-2">2+</p>
+                  <p className="text-4xl font-bold text-turquoise mb-2">2+</p>
                   <p className="text-gray-700 font-medium">Anos no Mercado</p>
                 </div>
                 <div className="text-center p-6 bg-blue-50 rounded-xl">
-                  <p className="text-4xl font-bold text-blue-600 mb-2">1000+</p>
+                  <p className="text-4xl font-bold text-turquoise mb-2">1000+</p>
                   <p className="text-gray-700 font-medium">Clientes Satisfeitos</p>
                 </div>
               </div>
@@ -252,7 +252,7 @@ export default function HomePage() {
 
       <section
         id="contato"
-        className="py-20 bg-gradient-to-br from-blue-600 to-blue-800 text-white"
+        className="py-20 bg-turquoise text-white"
       >
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -265,7 +265,7 @@ export default function HomePage() {
             href="https://wa.me/5516999999999"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-white text-blue-600 px-10 py-4 rounded-lg hover:bg-gray-100 transition-all transform hover:scale-105 font-semibold text-lg shadow-xl"
+            className="inline-block bg-green-500 text-dark px-10 py-4 rounded-lg hover:bg-green-600 transition-all transform hover:scale-105 font-semibold text-lg shadow-xl"
           >
             Falar no WhatsApp
           </a>
