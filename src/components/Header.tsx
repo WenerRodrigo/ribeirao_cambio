@@ -76,7 +76,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
             <div className="hidden md:flex items-center space-x-8 order-3 md:order-2">
               <button
                 onClick={() => scrollToSection('inicio')}
-                className="text-gray-700 hover:text-[rgb(52,185,194)] transition-colors font-medium"
+                className="text-gray-700 hover:text-turquoise transition-colors font-medium"
               >
                 Início
               </button>
@@ -102,7 +102,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
                 onClick={() => scrollToSection('contato')}
                 className="bg-turquoise text-white px-6 py-2 rounded-lg hover:bg-teal-700 transition-colors font-medium"
               >
-                Contato
+                Contatoo
               </button>
             </div>
             <div className="md:hidden w-6 order-3"></div>
